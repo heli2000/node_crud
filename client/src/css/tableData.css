@@ -1,0 +1,15 @@
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+th {
+    background-color: #075028;
+    color: white;
+}
+.table_header{
+    color: #19c965;
+}
+td{
+    color: #8ff0b9;
+}
