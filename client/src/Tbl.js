@@ -30,6 +30,7 @@ export class Tbl extends Component {
                     {title: "Profession"},
                 ],
                 "bDestroy": true,
+                order: [[0, 'desc']],
             } 
             );
     }
