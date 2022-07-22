@@ -13,3 +13,46 @@ th {
 td{
     color: #8ff0b9;
 }
+.userList, .userList table {
+    width: 100%;
+}
+.userList div[id*="DataTables_Table"] {
+    color: #c4f2d9;
+}
+.userList div[id*="DataTables_Table"] select{
+    background: #7d7c7c;
+    color: #ffff;
+}
+.userList .dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+.userList .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+.userList .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    cursor: default;
+    color: #ffff !important;
+    border: 1px solid transparent;
+    background: transparent;
+    box-shadow: none;
+}
+.userList .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.userList .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #e4eede !important;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: rgba(230, 230, 230, 0.1);
+    background: linear-gradient(to bottom, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+}
+/* .userList .dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: #bfbbbb;
+} */
+
+.userList  .dataTables_wrapper .dataTables_paginate .paginate_button {
+    /* box-sizing: border-box;
+    display: inline-block;
+    min-width: 1.5em;
+    padding: .5em 1em;
+    margin-left: 2px;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer; */
+    color: #b6aeae !important;
+    /* border: 1px solid transparent;
+    border-radius: 2px; */
+  }
