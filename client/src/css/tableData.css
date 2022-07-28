@@ -55,4 +55,61 @@ td{
     color: #b6aeae !important;
     /* border: 1px solid transparent;
     border-radius: 2px; */
-  }
+}
+#user_creation .btn-primary,
+.user_creation .btn-primary{
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #022d05;
+    --bs-btn-border-color: #ffff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #022d05;
+    --bs-btn-hover-border-color: #022d05;
+    --bs-btn-focus-shadow-rgb: 53, 141, 58;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #022d05;
+    --bs-btn-active-border-color: #022d05;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #022d05;
+    --bs-btn-disabled-border-color: #022d05;
+}
+.user_creation .modal-dialog .modal-content{
+    background-color: #282c34;
+}
+.user_creation .modal-dialog .modal-header{
+    color: #19c965;
+    padding-left: 199px;
+}
+.user_creation .modal-dialog .modal-content{
+    color: #FFFF;
+}
+.user_creation input[type=text], select, textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+.user_creation label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+.user_creation .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.user_creation .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 16px;
+}
+
+/* Clear floats after the columns */
+.user_creation .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.userList input[type=search] {
+    color: #fff;
+}

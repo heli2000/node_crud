@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button,Modal} from 'react-bootstrap'; 
 
 export class CreateUser extends Component {
 
@@ -7,7 +9,12 @@ export class CreateUser extends Component {
     this.state = {
       fields: {},
       errors: {},
+      show:false
     };
+  }
+
+  handleModal(){  
+    this.setState({show:!this.state.show})  
   }
 
   handleChange(field, e) {
@@ -61,35 +68,67 @@ export class CreateUser extends Component {
       });
 
       alert("Form submitted");
-      event.target.reset();
+      this.setState({show:!this.state.show})
+      //event.target.reset();
       // console.log(JSON.stringify(this.state));
       event.preventDefault();
       this.setState({
-        fields: {}
+        fields: {},
       });
     }
   }
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit.bind(this)}>
-        <label>
-          Name:
-          <input type="text" name="name" value={this.state.fields["name"]} onChange={this.handleChange.bind(this,"name")}/>
-          <span style={{ color: "red" }}>{this.state.errors["name"]}</span>
-        </label>
-        <label>
-          Password:
-          <input type="password" name="password" value={this.state.fields["password"]} onChange={this.handleChange.bind(this,"password")}/>
-          <span style={{ color: "red" }}>{this.state.errors["password"]}</span>
-        </label>
-        <label>
-          Description:
-          <input type="text" name="profession" value={this.state.fields["profession"]} onChange={this.handleChange.bind(this,"profession")}/>
-          <span style={{ color: "red" }}>{this.state.errors["profession"]}</span>
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div id="user_creation"> 
+        <div className="modalClass">  
+            <Button onClick={()=>this.handleModal()}>Create User</Button>
+        </div>
+        <Modal show={this.state.show} onHide={()=>this.handleModal()}  className='user_creation'>  
+          <Modal.Header closeButton>Create User</Modal.Header>  
+          <Modal.Body>
+            <form onSubmit={this.handleSubmit.bind(this)} id="create-user">
+              <div class="row">
+                <div class="col-25">
+                  <label>Name</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" name="name" value={this.state.fields["name"]} onChange={this.handleChange.bind(this,"name")} placeholder="Your name"/>
+                  <span style={{ color: "red" }}>{this.state.errors["name"]}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label>Password</label>
+                </div>
+                <div class="col-75">
+                  <input type="password" name="password" value={this.state.fields["password"]} onChange={this.handleChange.bind(this,"password")} placeholder="Password"/>
+                  <span style={{ color: "red" }}>{this.state.errors["password"]}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label>Profession</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" name="profession" value={this.state.fields["profession"]} onChange={this.handleChange.bind(this,"profession")} placeholder="Your Profession"/>
+                  <span style={{ color: "red" }}>{this.state.errors["profession"]}</span>
+                </div>
+              </div>
+              {/* <label></label>  
+                Description:
+                <input type="text" name="profession" value={this.state.fields["profession"]} onChange={this.handleChange.bind(this,"profession")}/>
+                <span style={{ color: "red" }}>{this.state.errors["profession"]}</span>
+              </label> */}
+              {/* <input type="submit" value="Submit"/> */}
+            </form>
+          </Modal.Body>  
+          <Modal.Footer>  
+            <Button onClick={()=>this.handleModal()}>Close</Button>  
+            <Button onClick={this.handleSubmit.bind(this)}>Save</Button>  
+          </Modal.Footer>  
+        </Modal>
+      </div>
     )
   }
 
