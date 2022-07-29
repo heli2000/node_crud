@@ -23,7 +23,7 @@ function App() {
         <div>
           <CreateUser />
         </div>
-        <div className='userList'>{(data.length !== 0) && <Tbl data = {data.map((item) => {return [item.id,item.name,item.password,item.profession]})}></Tbl>}</div>
+        <div className='userList'>{(data.length !== 0) && <Tbl data = {data.map((item) => {return [item.id,item.name,item.password,item.profession,'Edit','Delete']})}></Tbl>}</div>
       </header>
     </div>
   );

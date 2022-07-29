@@ -12,9 +12,15 @@ export class CreateUser extends Component {
       show:false
     };
   }
-
-  handleModal(){  
-    this.setState({show:!this.state.show})  
+  
+  //on off model
+  handleModal(){ 
+    if(this.state.show) {
+      this.setState({
+        errors: {},
+      });
+    } 
+    this.setState({show:!this.state.show});
   }
 
   handleChange(field, e) {
@@ -69,8 +75,6 @@ export class CreateUser extends Component {
 
       alert("Form submitted");
       this.setState({show:!this.state.show})
-      //event.target.reset();
-      // console.log(JSON.stringify(this.state));
       event.preventDefault();
       this.setState({
         fields: {},
@@ -115,11 +119,6 @@ export class CreateUser extends Component {
                   <span style={{ color: "red" }}>{this.state.errors["profession"]}</span>
                 </div>
               </div>
-              {/* <label></label>  
-                Description:
-                <input type="text" name="profession" value={this.state.fields["profession"]} onChange={this.handleChange.bind(this,"profession")}/>
-                <span style={{ color: "red" }}>{this.state.errors["profession"]}</span>
-              </label> */}
               {/* <input type="submit" value="Submit"/> */}
             </form>
           </Modal.Body>  
@@ -131,5 +130,4 @@ export class CreateUser extends Component {
       </div>
     )
   }
-
 }

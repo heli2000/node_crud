@@ -28,6 +28,8 @@ export class Tbl extends Component {
                     {title: "Name"},
                     {title: "Password"},
                     {title: "Profession"},
+                    {title: "Edit"},
+                    {title: "Delete"},
                 ],
                 "bDestroy": true,
                 order: [[0, 'desc']],

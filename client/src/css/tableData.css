@@ -42,6 +42,9 @@ td{
 .userList  .dataTables_wrapper .dataTables_paginate .paginate_button {
     color: #b6aeae !important;
 }
+.userList table.dataTable thead th{
+    text-align: center;
+}
 #user_creation .btn-primary,
 .user_creation .btn-primary{
     --bs-btn-color: #fff;
@@ -89,8 +92,6 @@ td{
     width: 75%;
     margin-top: 16px;
 }
-
-/* Clear floats after the columns */
 .user_creation .row:after {
     content: "";
     display: table;
