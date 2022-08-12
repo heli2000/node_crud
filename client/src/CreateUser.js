@@ -73,7 +73,7 @@ export class CreateUser extends Component {
         return response.json();
       });
 
-      alert("Form submitted");
+      //alert("Form submitted");
       this.setState({show:!this.state.show})
       event.preventDefault();
       this.setState({
